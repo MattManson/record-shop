@@ -65,3 +65,30 @@ class Genre
 
 end
 nil
+
+
+def genre
+  sql = "SELECT genres.genre FROM genres
+  INNER JOIN artists
+  ON genres.id = artists.genre
+  WHERE artists.id = $1"
+  values = [@id]
+  genre = SqlRunner.run( sql, values )
+  result = Genre.new(genre.first)
+  return result.genre
+end
+
+
+genre1 = Genre.new({
+  "genre" => "Blackened Death Metal"
+  })
+genre2 = Genre.new({
+  "genre" => "Thrash Metal"
+  })
+genre3 = Genre.new({
+  "genre" => "Metalcore"
+  })
+
+genre1.save
+genre2.save
+genre3.save

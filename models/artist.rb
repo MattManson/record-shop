@@ -1,24 +1,23 @@
 require_relative('../db/sql_runner')
 require_relative('./album.rb')
-require_relative('./genre.rb')
+
 
 class Artist
-  attr_reader :id, :name, :logo, :genre
+  attr_reader :id, :name, :logo
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @logo = options['logo']
-    @genre = options['genre']
   end
 
   def save
     sql = "INSERT INTO artists
-    ( name, logo, genre )
+    ( name, logo )
     VALUES
-    ( $1, $2, $3 )
+    ( $1, $2)
     RETURNING *"
-    values = [@name, @logo, @genre]
+    values = [@name, @logo]
     artist = SqlRunner.run(sql, values)
     @id = artist.first()['id'].to_i
   end
@@ -42,9 +41,9 @@ class Artist
 
   def update
     sql = "UPDATE artists
-    SET( name, logo ) = ( $1, $2, $3)
+    SET( name, logo ) = ( $1, $2)
     WHERE id = $4"
-    values = [@name, @logo, @genre]
+    values = [@name, @logo]
     SqlRunner.run( sql, values )
   end
 
@@ -68,17 +67,6 @@ class Artist
     album_count = SqlRunner.run( sql, values )[0]["count"]
     # result = Album.new(albums.count)
     return album_count
-  end
-
-  def genre
-    sql = "SELECT genres.genre FROM genres
-    INNER JOIN artists
-    ON genres.id = artists.genre
-    WHERE artists.id = $1"
-    values = [@id]
-    genre = SqlRunner.run( sql, values )
-    result = Genre.new(genre.first)
-    return result.genre
   end
 
 end

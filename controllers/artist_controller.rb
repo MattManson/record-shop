@@ -1,8 +1,5 @@
 require_relative('../models/album.rb')
 require_relative('../models/artist.rb')
-require_relative('../models/genre.rb')
-
-
 
 get '/artist' do
   @artist = Artist.all()
