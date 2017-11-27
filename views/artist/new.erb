@@ -1,0 +1,32 @@
+<h1>Add New Artist</h1>
+
+<form method="post" action="/artist">
+
+  <div class="field-group">
+    <label for="first-name-field" class="label">Name:</label>
+    <div class="field">
+      <input
+        type="text"
+        name="first_name"
+        id="first-name-field"
+        placeholder="First name"
+        required
+      />
+   </div>
+  </div>
+
+  <div class="field-group">
+    <label for="last-name-field" class="label">Artwork:</label>
+    <div class="field">
+      <input
+        type="text"
+        name="last_name"
+        id="last-name-field"
+        placeholder="artwork url"
+        required
+      />
+    </div>
+  </div>
+
+  <button class="big-button button">add artist</button>
+</form>

@@ -1,0 +1,118 @@
+require_relative('../db/sql_runner')
+require_relative('./artist.rb')
+require_relative('./genre.rb')
+
+class Album
+  attr_reader :id, :title, :artist, :quantity, :buy_price, :sell_price
+
+  def initialize(options)
+    @id = options['id'].to_i
+    @title = options['title']
+    @artist = options['artist'].to_i
+    @quantity = options['quantity'].to_i
+    @buy_price = options['buy_price'].to_f
+    @sell_price = options['sell_price'].to_f
+  end
+
+  def save
+    sql = "INSERT INTO albums
+    (
+      title,
+      artist,
+      quantity,
+      buy_price,
+      sell_price
+    )
+    VALUES
+    (
+      $1, $2, $3, $4, $5
+    )
+    RETURNING *"
+    values = [@title, @artist, @quantity, @buy_price, @sell_price]
+    album = SqlRunner.run(sql, values)
+    @id = album.first()['id'].to_i
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM albums
+    WHERE id = $1"
+    values = [id]
+    artist = SqlRunner.run( sql, values )
+    result = Album.new( album.first )
+    return result
+  end
+
+  def self.all
+    sql = "SELECT * FROM albums"
+    values = []
+    albums = SqlRunner.run( sql, values )
+    result = albums.map { |album| Album.new( album ) }
+    return result
+  end
+
+  def artist
+    sql = "SELECT * FROM artists
+    WHERE id = $1"
+    values = [@artist]
+    artist = SqlRunner.run( sql, values )
+    result = Artist.new( artist.first )
+    return result
+  end
+
+  def update
+    sql = "UPDATE albums
+    SET(
+    title,
+    artist,
+    quantity,
+    buy_price,
+    sell_price
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@title, @artist, @quantity, @buy_price, @sell_price, @id]
+    SqlRunner.run( sql, values )
+  end
+
+  def delete(id)
+    sql = "DELETE FROM albums WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete_all
+    sql = "DELETE FROM albums"
+    values = []
+    SqlRunner.run( sql, values )
+  end
+
+  def stock_level
+    case @quantity
+    when 0 then return "out of stock"
+    when 1..5 then return "low"
+    when 6..10 then return "medium"
+    when 10..999 then return "high"
+    end
+  end
+
+  def markup
+    markup = ((@buy_price / @sell_price)*100).to_f
+    return "%#{markup}"
+  end
+
+  def genre
+    sql = "SELECT genres.genre FROM genres
+    INNER JOIN artists
+    ON genres.id = artists.genre
+    INNER JOIN albums
+    ON albums.artist = artists.id
+    WHERE albums.id = $1"
+    values = [@id]
+    genre = SqlRunner.run( sql, values )
+    result = Genre.new( genre.first )
+    return result.genre
+  end
+
+end

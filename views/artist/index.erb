@@ -1,0 +1,18 @@
+<h1>Artists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>albums</th>
+    <th>genre</th>
+  </tr>
+  <% for artist in @artist %>
+  <tr>
+    <td><a href="/artists/<%= artist.id %>"><%= artist.name %></a></td>
+    <td>|</td>
+    <td><%= artist.num_albums %></td>
+    <td><%= artist.genre %></td>
+  </tr>
+  <% end %>
+</table>
