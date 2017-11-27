@@ -56,6 +56,14 @@ album4 = Album.new({
   "sell_price" => 11,
   "genre" => "Death Metal"
   })
+album5 = Album.new({
+  "title" => "Seasons In The Abyss",
+  "artist" => artist2.id,
+  "quantity" => 2,
+  "buy_price" => 2.5,
+  "sell_price" => 9,
+  "genre" => "Thrash"
+  })
 
 
 
@@ -63,3 +71,4 @@ album1.save
 album2.save
 album3.save
 album4.save
+album5.save

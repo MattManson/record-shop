@@ -10,7 +10,13 @@
   <tr>
     <td><a href="/artists/<%= artist.id %>"><%= artist.name %></a></td>
     <td>|</td>
-    <td><%= artist.num_albums %></td>
+    <td>
+      <ul>
+        <% artist.albums.each do |album| %>
+          <li><%= album.title %></li>
+          <% end %>
+      </ul>
+    </td>
   </tr>
   <% end %>
 </table>

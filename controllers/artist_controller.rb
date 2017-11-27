@@ -10,6 +10,10 @@ get '/artist/new' do
   erb (:"artist/new")
 end
 
+get '/artist/:id/albums' do
+  erb (:"artist/albums")
+end
+
 post '/artist' do
   artist = Artist.new(params)
   artist.save()
