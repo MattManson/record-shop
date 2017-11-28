@@ -32,9 +32,9 @@
         <td><a href="/artist/<%= album.artist.id %>"><%= album.title %></a></td>
         <td><%= album.quantity %></td>
         <td><%= album.stock_level %></td>
-        <td><%= album.buy_price %></td>
-        <td><%= album.sell_price %></td>
-        <td><%= album.markup %></td>
+        <td><%= sprintf('%.2f', (album.buy_price/100.to_f)) %></td>
+        <td><%= sprintf('%.2f', (album.sell_price/100.to_f)) %></td>
+        <td><%= sprintf('%.2f', album.markup) %></td>
       </tr>
       <%end%>
     </table>

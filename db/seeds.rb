@@ -27,41 +27,41 @@ artist4.save
 album1 = Album.new({
   "title" => "Vengeful Ascension",
   "artist" => artist1.id,
-  "quantity" => 5,
-  "buy_price" => 3,
-  "sell_price" => 10,
+  "quantity" => 500,
+  "buy_price" => 300,
+  "sell_price" => 1000,
   "genre" => "Blackened Death Metal"
   })
 album2 = Album.new({
   "title" => "Reign in Blood",
   "artist" => artist2.id,
-  "quantity" => 10,
-  "buy_price" => 3,
-  "sell_price" => 12,
+  "quantity" => 1000,
+  "buy_price" => 300,
+  "sell_price" => 1200,
   "genre" => "Thrash"
   })
 album3 = Album.new({
   "title" => "Misanthropy Pure",
   "artist" => artist3.id,
-  "quantity" =>12,
-  "buy_price" => 4,
-  "sell_price" => 9,
+  "quantity" =>1200,
+  "buy_price" => 400,
+  "sell_price" => 900,
   "genre" => "Metalcore"
   })
 album4 = Album.new({
   "title" => "Serpents Unleashed",
   "artist" => artist4.id,
-  "quantity" => 6,
-  "buy_price" => 3,
-  "sell_price" => 11,
+  "quantity" => 600,
+  "buy_price" => 300,
+  "sell_price" => 1100,
   "genre" => "Death Metal"
   })
 album5 = Album.new({
   "title" => "Seasons In The Abyss",
   "artist" => artist2.id,
-  "quantity" => 2,
-  "buy_price" => 2.5,
-  "sell_price" => 9,
+  "quantity" => 200,
+  "buy_price" => 250,
+  "sell_price" => 900,
   "genre" => "Thrash"
   })
 

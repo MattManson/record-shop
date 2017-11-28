@@ -9,8 +9,8 @@ class Album
     @title = options['title']
     @artist = options['artist'].to_i
     @quantity = options['quantity'].to_i
-    @buy_price = options['buy_price'].to_f
-    @sell_price = options['sell_price'].to_f
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
     @genre = options['genre']
   end
 
@@ -100,8 +100,8 @@ class Album
   end
 
   def markup
-    markup = ((@buy_price / @sell_price)*100).to_f
-    return "%#{markup}"
+    markup = ((@buy_price / @sell_price.to_f)*100)
+    return markup
   end
 
   def genre
