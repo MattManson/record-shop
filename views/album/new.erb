@@ -1,0 +1,87 @@
+<h1>Add New Album</h1>
+
+<form class="" action="/" method="get">
+  <button class="button" type="submit" formaction="/">Index</button>
+</form>
+
+<form method="post" action="/album">
+
+  <div class="field-group">
+    <label for="first-name-field" class="label">Title:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="title"
+      id="first-name-field"
+      placeholder="Album Title"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="artist-selection" class="label">Artist:</label>
+    <div class="field">
+      <select name="artist" id="artist-selection">
+        <% @artists.each do |artist| %>
+        <option value=<%=artist.id%>><%= artist.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="last-name-field" class="label">Quantity:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="quantity"
+      id="quantity"
+      placeholder="quantity"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="last-name-field" class="label">Buy Price:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="buy_price"
+      id="last-name-field"
+      placeholder="buy price "
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="last-name-field" class="label">Sell Price:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="sell_price"
+      id="last-name-field"
+      placeholder="Sell Price"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="last-name-field" class="label">Genre:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="genre"
+      id="last-name-field"
+      placeholder="Genre"
+      required
+      />
+    </div>
+  </div>
+
+
+  <button class="big-button button">add artist</button>
+</form>
