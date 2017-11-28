@@ -20,7 +20,7 @@ class TestAlbum <MiniTest::Test
   end
 
   def test_stock_level
-    assert_equal("high", @album.stock_level)
+    assert_equal("medium", @album.stock_level)
   end
 
 end

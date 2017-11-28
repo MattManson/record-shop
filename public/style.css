@@ -1,13 +1,13 @@
 body {
-  color: #efe6dc;
+  color: #820606;
   background-image: url("images/maple.jpg");
 }
-@font-face {
-  font-family: "Metal Shadow";
-  src: url("fonts/vtks Rude Metal Shadow.tff");
-}
+
 h1 {
-  font-family: "Metal Shadow";
+  color: #bc2121;
+  font-size: 60px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
   font-weight:normal;
   font-style:normal;
 }
@@ -20,7 +20,18 @@ h1 {
 .info-table td{
   border: 1px solid black;
 }
-
+a:link {
+    color: #bc2121;
+}
+a:visited {
+    color: #660505;
+}
+a:hover {
+    color: #ff0f0f;
+}
+a:active {
+    color: #590819;
+}
 
 
 .info-table tr:nth-child(even) {
