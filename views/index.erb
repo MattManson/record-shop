@@ -13,7 +13,7 @@
       <% @albums.each do |album| %>
       <tr>
 
-        <td><a href="/artist/<%= artist.id %>"><%= album.artist.name %></td>
+        <td><a href="/artist/<%= album.artist.id %>"><%= album.artist.name %></td>
         <td><img src= " <%= album.artist.logo %> " alt="" border=3 height=100 width=100></td>
         <td><a href="/artist/<%= album.artist.id %>"><%= album.title %></a></td>
         <td><%= album.quantity %></td>

@@ -4,15 +4,13 @@
     <th>Albums</th>
   </tr>
   <tr>
-      <% for artist in @artist %>
-    <td><%= artist.name %></a></td>
+    <td><%= @artist.name %></a></td>
     <td>
       <ul>
-        <% artist.albums.each do |album| %>
+        <% @artist.albums.each do |album| %>
         <li><%= album.title %></li>
         <% end %>
       </ul>
-      <% end%>
     </td>
   </tr>
 </table>
