@@ -1,14 +1,26 @@
-<% @albums.each do |album| %>
-<div class="order-list">
-  <p>Title: <%= album.title %></p>
-  <p>Artist: <%= album.artist.name %></p>
-  <p>Quantity: <%= album.quantity %></p>
-  <p>Stock Level: <%= album.stock_level %></p>
-  <p>Buy Price: <%= album.buy_price %></p>
-  <p>Sell Price: <%= album.sell_price %></p>
-  <p>Markup: <%= album.markup %></p>
 
-</div>
-<%end%>
+    <table class="info-table" style="width:100%">
+      <tr>
+        <th>Artist</th>
+        <th>Logo</th>
+        <th>Album</th>
+        <th>Quantity</th>
+        <th>Stock Level</th>
+        <th>Cost Price</th>
+        <th>Sale Price</th>
+        <th>Markup %</th>
+      </tr>
+      <% @albums.each do |album| %>
+      <tr>
 
-<table style="width:100%">
+        <td><a href="/artist/<%= artist.id %>"><%= album.artist.name %></td>
+        <td><img src= " <%= album.artist.logo %> " alt="" border=3 height=100 width=100></td>
+        <td><a href="/artist/<%= album.artist.id %>"><%= album.title %></a></td>
+        <td><%= album.quantity %></td>
+        <td><%= album.stock_level %></td>
+        <td><%= album.buy_price %></td>
+        <td><%= album.sell_price %></td>
+        <td><%= album.markup %></td>
+      </tr>
+      <%end%>
+    </table>

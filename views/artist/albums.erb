@@ -1,0 +1,18 @@
+<table class="info-table" style="width:100%">
+  <tr>
+    <th>Arist</th>
+    <th>Albums</th>
+  </tr>
+  <tr>
+      <% for artist in @artist %>
+    <td><%= artist.name %></a></td>
+    <td>
+      <ul>
+        <% artist.albums.each do |album| %>
+        <li><%= album.title %></li>
+        <% end %>
+      </ul>
+      <% end%>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,21 @@
+body {
+  color: #efe6dc;
+  background-image: url("images/maple.jpg");
+}
+@font-face{
+  font-family: "vtks Rude Metal Shadow";
+  src: ("fonts/vtks Rude Metal Shadow.tff")
+}
+h1 {
+  font-family: "vtks Rude Metal Shadow";
+  font-weight:normal;
+  font-style:normal;
+}
+
+.info-table{
+  border: 1px solid black;
+}
+
+.info-table td{
+  border: 1px solid black;
+}

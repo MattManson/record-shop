@@ -1,16 +1,20 @@
 <h1>Artists</h1>
 
-<table>
+<table class="info-table" style="width:100%">
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th>albums</th>
+    <th colspan = 4>Name</th>
+    <th colspan = 4></th>
+    <th colspan = 4>Logo</th>
+    <th colspan = 4></th>
+    <th colspan = 4>Albums</th>
   </tr>
   <% for artist in @artist %>
   <tr>
-    <td><a href="/artists/<%= artist.id %>"><%= artist.name %></a></td>
+    <td colspan = 4><a href="/artist/<%= artist.id %>"><%= artist.name %></a></td>
     <td>|</td>
-    <td>
+    <td colspan = 4><img src= " <%= artist.logo %> " alt="" border=3 height=100 width=100>
+    </td>
+    <td colspan = 4>
       <ul>
         <% artist.albums.each do |album| %>
           <li><%= album.title %></li>
