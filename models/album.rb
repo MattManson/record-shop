@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 require_relative('./artist.rb')
 
 class Album
-  attr_reader :id, :title, :artist, :quantity, :buy_price, :sell_price
+  attr_reader :id, :title, :artist, :quantity, :buy_price, :sell_price, :genre
 
   def initialize(options)
     @id = options['id'].to_i
@@ -38,7 +38,7 @@ class Album
     sql = "SELECT * FROM albums
     WHERE id = $1"
     values = [id]
-    artist = SqlRunner.run( sql, values )
+    album = SqlRunner.run( sql, values )
     result = Album.new( album.first )
     return result
   end
@@ -78,7 +78,7 @@ class Album
     SqlRunner.run( sql, values )
   end
 
-  def delete(id)
+  def delete
     sql = "DELETE FROM albums WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
@@ -103,18 +103,18 @@ class Album
     markup = ((@buy_price / @sell_price.to_f)*100)
     return markup
   end
-
-  def genre
-    sql = "SELECT genres.genre FROM genres
-    INNER JOIN artists
-    ON genres.id = artists.genre
-    INNER JOIN albums
-    ON albums.artist = artists.id
-    WHERE albums.id = $1"
-    values = [@id]
-    genre = SqlRunner.run( sql, values )
-    result = Genre.new( genre.first )
-    return result.genre
-  end
+  #
+  # def genre
+  #   sql = "SELECT genres.genre FROM genres
+  #   INNER JOIN artists
+  #   ON genres.id = artists.genre
+  #   INNER JOIN albums
+  #   ON albums.artist = artists.id
+  #   WHERE albums.id = $1"
+  #   values = [@id]
+  #   genre = SqlRunner.run( sql, values )
+  #   result = Genre.new( genre.first )
+  #   return result.genre
+  # end
 
 end

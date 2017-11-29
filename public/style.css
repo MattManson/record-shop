@@ -18,6 +18,8 @@ h1 {
 }
 
 .info-table td{
+  font-family: 'Bangers', cursive;
+  font-weight: bold;
   border: 1px solid black;
 }
 a:link {
@@ -33,7 +35,6 @@ a:active {
     color: #590819;
 }
 
-
 .info-table tr:nth-child(even) {
-  background-color: rgba(255,255,255, 0.6);
+  background-color: rgba(255,255,255, 0.4);
 }
