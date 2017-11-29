@@ -22,3 +22,19 @@ post '/artist' do
   @artist.save()
   redirect to ('/artist')
 end
+
+delete '/artist/:id' do
+  artist =Artist.find(params[:id])
+  artist.delete
+  redirect to('/')
+end
+
+get '/artist/:id/edit' do
+  @artist = Artist.find( params[:id] )
+  erb( :"artist/edit" )
+end
+
+put '/artist/:id' do
+  Artist.new( params ).update
+  redirect to '/'
+end

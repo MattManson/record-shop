@@ -35,6 +35,10 @@ a:active {
     color: #590819;
 }
 
+.buttons {
+  display: inline;
+}
+
 .info-table tr:nth-child(even) {
   background-color: rgba(255,255,255, 0.4);
 }
