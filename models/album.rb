@@ -111,7 +111,15 @@ class Album
     values = ["%#{search}%"]
     albums = SqlRunner.run(sql, values)
     return albums.map{|album| Album.new(album)}
-  end 
+  end
+  def self.search_genre(search)
+    sql = "SELECT *
+            FROM albums
+            WHERE (genre LIKE $1 OR genre LIKE lower($1))"
+    values = ["%#{search}%"]
+    albums = SqlRunner.run(sql, values)
+    return albums.map{|album| Album.new(album)}
+  end
   #
   # def genre
   #   sql = "SELECT genres.genre FROM genres

@@ -79,4 +79,13 @@ class Artist
     return result
   end
 
+  def self.search_artist(search)
+    sql = "SELECT *
+            FROM artists
+            WHERE (name LIKE $1 OR name LIKE lower($1))"
+    values = ["%#{search}%"]
+    artists = SqlRunner.run(sql, values)
+    return artists.map{|artist| Artist.new(artist)}
+  end
+
 end
