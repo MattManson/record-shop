@@ -35,12 +35,13 @@ a:active {
     color: #590819;
 }
 .links {
-  padding-left: 70px;
+  width: 100%;
+  padding-left: 10px;
   margin: auto;
 }
 .nav-link {
   float: center;
-  width: 25%;
+  width: 28%;
   font-family: "Bangers";
   color: white !important;
   background-color: #421717;
@@ -55,4 +56,78 @@ a:active {
 
 .info-table tr:nth-child(even) {
   background-color: rgba(255,255,255, 0.4);
+}
+.delete-link {
+  border-radius: 0px;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+.delete-link:hover {
+  color: #d10404 !important;
+}
+.nav-link2 {
+  float: center;
+  width: 75%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-link:hover {
+  color: #d10404 !important;
+}
+.nav-link3 {
+  float: center;
+  width: 90%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-link:hover {
+  color: #d10404 !important;
+}
+.nav-link4 {
+  float: center;
+  width: 25%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-link:hover {
+  color: #d10404 !important;
+}
+
+div.search
+{
+  display: block;
+  text-align: center;
+}
+input {
+  width: 50%;
+  border: 2px solid #421717;
+  border-radius: 4px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  margin-bottom: 5px;
 }

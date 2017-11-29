@@ -103,6 +103,15 @@ class Album
     markup = ((@buy_price / @sell_price.to_f)*100)
     return markup
   end
+
+  def self.search_album(search)
+    sql = "SELECT *
+            FROM albums
+            WHERE (title LIKE $1 OR title LIKE lower($1))"
+    values = ["%#{search}%"]
+    albums = SqlRunner.run(sql, values)
+    return albums.map{|album| Album.new(album)}
+  end 
   #
   # def genre
   #   sql = "SELECT genres.genre FROM genres

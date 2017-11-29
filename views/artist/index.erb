@@ -1,6 +1,6 @@
 <h1>Artists</h1>
 
-<div class="nav-link">
+<div class="nav-link4">
   <a href="/">Home</a>
 </div>
 
@@ -22,15 +22,14 @@
           <li><%= album.title %></li>
           <% end %>
       </ul>
-      <a class="nav-link" href="/album/new">Add New Album</a>
+      <a class="nav-link3" href="/album/new">Add New Album</a>
     </td>
-    <td><p><a href="/artist/<%= artist.id %>/edit">
-      <button class="btn btn--danger">Edit</button></a>
+    <td><p><a class="nav-link2" href="/artist/<%= artist.id %>/edit">Edit</a>
 
     </div>
       <form action="/artist/<%= artist.id %>" method="POST">
         <input  type="hidden" name="_method" value="delete" />
-        <button class="btn btn--danger">Delete</button>
+        <button class="delete-link" >Delete</button>
       </form>
     </p>
   </tr>
