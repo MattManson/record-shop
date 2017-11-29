@@ -1,14 +1,15 @@
 <h1>Artists</h1>
 
-<form class="" action="/" method="get">
-  <button class="button" type="submit" formaction="/">Index</button>
-</form>
+<div class="nav-link">
+  <a href="/">Home</a>
+</div>
 
 <table class="info-table" style="width:100%">
   <tr>
     <th colspan = 4>Name</th>
     <th colspan = 4>Logo</th>
     <th colspan = 4>Albums</th>
+    <th colspan = 4>Edit/Delete</th>
   </tr>
   <% for artist in @artist %>
   <tr>
@@ -21,7 +22,17 @@
           <li><%= album.title %></li>
           <% end %>
       </ul>
+      <a class="nav-link" href="/album/new">Add New Album</a>
     </td>
+    <td><p><a href="/artist/<%= artist.id %>/edit">
+      <button class="btn btn--danger">Edit</button></a>
+
+    </div>
+      <form action="/artist/<%= artist.id %>" method="POST">
+        <input  type="hidden" name="_method" value="delete" />
+        <button class="btn btn--danger">Delete</button>
+      </form>
+    </p>
   </tr>
   <% end %>
 </table>

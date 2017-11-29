@@ -36,5 +36,5 @@ end
 
 put '/artist/:id' do
   Artist.new( params ).update
-  redirect to '/'
+  redirect to '/artist'
 end

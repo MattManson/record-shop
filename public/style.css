@@ -34,17 +34,23 @@ a:hover {
 a:active {
     color: #590819;
 }
-
+.links {
+  padding-left: 70px;
+  margin: auto;
+}
 .nav-link {
-  display: inline-block;
+  float: center;
+  width: 25%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
   text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  display: inline-block;
+}
+.nav-link:hover {
+  color: #d10404 !important;
 }
 
 .info-table tr:nth-child(even) {

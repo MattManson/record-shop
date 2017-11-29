@@ -18,11 +18,21 @@ artist4 = Artist.new({
   "name" => "Skeletonwitch",
   "logo" => "https://vignette.wikia.nocookie.net/logopedia/images/a/a4/Skeletonwitch_logo_02.png/revision/latest?cb=20161025032948"
   })
+artist5 = Artist.new({
+  "name" => "Mastodon",
+  "logo" => "https://www.altpress.com/images/uploads/news/mastodon_logo.png"
+  })
+artist6 = Artist.new({
+  "name" => "Taylor Swift",
+  "logo" => "http://thepacenews.com/wp-content/uploads/2017/08/Talor-Swift.jpg"
+  })
 
 artist1.save
 artist2.save
 artist3.save
 artist4.save
+artist5.save
+artist6.save
 
 album1 = Album.new({
   "title" => "Vengeful Ascension",
@@ -64,6 +74,30 @@ album5 = Album.new({
   "sell_price" => 900,
   "genre" => "Thrash"
   })
+album6 = Album.new({
+  "title" => "Constricting Rage of the Merciless",
+  "artist" => artist1.id,
+  "quantity" => 10,
+  "buy_price" => 400,
+  "sell_price" => 999,
+  "genre" => "Blackened Death Metal"
+  })
+album7 = Album.new({
+  "title" => "Leviathan",
+  "artist" => artist5.id,
+  "quantity" => 12,
+  "buy_price" => 360,
+  "sell_price" =>1300,
+  "genre" => "Heavy Metal"
+  })
+album8 = Album.new({
+  "title" => "1989",
+  "artist" => artist6.id,
+  "quantity" => 40,
+  "buy_price" => 250,
+  "sell_price" => 890,
+  "genre" => "Pop"
+  })
 
 
 
@@ -72,3 +106,5 @@ album2.save
 album3.save
 album4.save
 album5.save
+album6.save
+album7.save

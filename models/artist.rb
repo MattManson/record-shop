@@ -42,8 +42,8 @@ class Artist
   def update
     sql = "UPDATE artists
     SET( name, logo ) = ( $1, $2)
-    WHERE id = $4"
-    values = [@name, @logo]
+    WHERE id = $3"
+    values = [@name, @logo, @id]
     SqlRunner.run( sql, values )
   end
 

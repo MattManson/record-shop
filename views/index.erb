@@ -1,19 +1,6 @@
 
 <div class="links">
 
-  <!-- <form class="index-buttons" action="/artist/new" method="get">
-    <button class="button" type="submit" formaction="/artist/new">Add New Artist</button>
-  </form>
-
-  <form class="index-buttons" action="/album/new" method="get">
-    <button class="button" type="submit" formaction="/album/new">Add New Album</button>
-  </form>
-
-  <form class="index-buttons" action="/artist" method="get">
-    <button class="button" type="submit" formaction="/artist">Show All Artists</button>
-  </form> -->
-
-
   <a class="nav-link" href="/artist/new">Add New Artist</a>
   <a class="nav-link" href="/album/new">Add New Album</a>
   <a class="nav-link" href="/artist">Show All Artists</a>
@@ -25,6 +12,7 @@
     <th>Artist</th>
     <th>Logo</th>
     <th>Album</th>
+    <th>Genre</th>
     <th>Quantity</th>
     <th>Stock Level</th>
     <th>Cost Price</th>
@@ -38,6 +26,7 @@
     <td><a href="/artist/<%= album.artist.id %>"><%= album.artist.name %></td>
       <td><img src= " <%= album.artist.logo %> " alt="" border=3 height=100 width=100></td>
       <td><a href="/artist/<%= album.artist.id %>"><%= album.title %></a></td>
+      <td><%= album.genre %></td>
       <td><%= album.quantity %></td>
       <td><%= album.stock_level %></td>
       <td><%= sprintf('%.2f', (album.buy_price/100.to_f)) %></td>
