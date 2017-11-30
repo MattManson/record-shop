@@ -7,14 +7,16 @@
 <table class="info-table" style="width:100%">
   <tr>
     <th>Arist</th>
+    <th>Logo</th>
     <th>Albums</th>
   </tr>
   <tr>
-    <td><%= @artist.name %></a></td>
+    <td><a href="/artist/<%= @artist.id %>/edit"><%= @artist.name %></a></td>
+    <td><img src= " <%= @artist.logo %> " alt="" border=3 height=100 width=100></td>
     <td>
       <ul>
         <% @artist.albums.each do |album| %>
-        <li><%= album.title %></li>
+        <li><a href="/album/<%= album.id %> "><%= album.title %></a></li>
         <% end %>
       </ul>
     </td>

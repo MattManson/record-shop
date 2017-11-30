@@ -16,6 +16,11 @@ post '/album' do
   redirect to ('/')
 end
 
+get '/album/:id' do
+  @album = Album.find(params[:id])
+  erb (:"album/show")
+end
+
 delete '/album/:id' do
   album =Album.find(params[:id])
   album.delete

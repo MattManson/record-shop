@@ -1,0 +1,45 @@
+<div class="nav-link5">
+  <a href="/">Home</a>
+</div>
+
+<div class="">
+
+  <table class="info-table" style="width:100%">
+    <tr>
+      <th>Artist</th>
+      <th>Logo</th>
+      <th>Album</th>
+      <th>Genre</th>
+      <th>Quantity</th>
+      <th>Stock Level</th>
+      <th>Cost Price</th>
+      <th>Sale Price</th>
+      <th>Markup %</th>
+      <th>Edit/Delete</th>
+    </tr>
+
+    <tr>
+
+      <td><a href="/artist/<%= @album.artist.id %>"><%= @album.artist.name %></td>
+        <td><img src= " <%= @album.artist.logo %> " alt="" border=3 height=100 width=100></td>
+        <td><a href="/artist/<%= @album.artist.id %>"><%= @album.title %></a></td>
+        <td><%= @album.genre %></td>
+        <td><%= @album.quantity %></td>
+        <td><%= @album.stock_level %></td>
+        <td><%= sprintf('%.2f', (@album.buy_price/100.to_f)) %></td>
+        <td><%= sprintf('%.2f', (@album.sell_price/100.to_f)) %></td>
+        <td><%= sprintf('%.2f', @album.markup) %></td>
+        <td><p><a href="/album/<%= @album.id %>/edit">
+          <button class="delete-link">Edit</button></a>
+
+        </div>
+          <form action="/album/<%= @album.id %>" method="POST">
+            <input  type="hidden" name="_method" value="delete" />
+            <button class="delete-link">Delete</button>
+          </form>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+</div>

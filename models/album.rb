@@ -112,7 +112,7 @@ class Album
     albums = SqlRunner.run(sql, values)
     return albums.map{|album| Album.new(album)}
   end
-  
+
   def self.search_genre(search)
     sql = "SELECT *
             FROM albums

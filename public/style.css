@@ -5,6 +5,7 @@ body {
 
 h1 {
   color: #bc2121;
+  text-shadow: 2px 2px black;
   font-size: 60px;
   text-align: center;
   font-family: 'Bangers', cursive;
@@ -13,6 +14,7 @@ h1 {
 }
 
 .info-table{
+  font-family: "Bangers", cursive;
   border: 1px solid black;
   background-color: rgba(255,255,255, 0.6);
 }
@@ -114,6 +116,20 @@ a:active {
 .nav-link:hover {
   color: #d10404 !important;
 }
+.nav-link6{
+  width: 15%;
+  font-size: 18px;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-link5:hover {
+  color: #d10404 !important;
+}
 
 div.search
 {
@@ -133,7 +149,12 @@ input {
   padding-left: 40px;
   margin-bottom: 5px;
 }
+.select{
+  width: 54%;
+}
 div.field-group{
+  color: #c62121 !important;
+  text-shadow: 2px 2px black;
   font-family: "Bangers", cursive;
   font-size: 30px;
   width: 80%;
@@ -151,13 +172,13 @@ div.field-group{
   text-align: center;
 }
 .nav-link5{
-  float: center;
+  margin: auto;
   width: 39.5% ;
   font-size: 30px;
   font-family: "Bangers";
   color: white !important;
   background-color: #421717;
-  margin-left: 321px;
+
   padding: 14px 25px;
   text-align: center;
 }
@@ -187,7 +208,6 @@ a.home-button:hover {
   color: #d10404 !important;
 }
 .add-link2{
-  float: center;
   border-radius: 0px;
   border: none;
   font-size: 20px;
@@ -198,4 +218,31 @@ a.home-button:hover {
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
+}
+div.result_header{
+  color: #bc2121;
+  text-shadow: 2px 2px black;
+  font-size: 60px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  font-weight:normal;
+  font-style:normal;
+}
+div.results{
+  color: #bc2121;
+  text-shadow: 2px 2px black;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  font-weight:normal;
+  font-style:normal;
+}
+div.artist-result-header{
+  color: #bc2121 !important;
+  text-shadow: 2px 2px black !important;
+  font-size: 35px !important;
+  text-align: center !important;
+  font-family: 'Bangers', cursive !important;
+  font-weight:normal !important;
+  font-style:normal !important;
 }

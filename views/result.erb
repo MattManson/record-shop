@@ -1,47 +1,61 @@
 
-<div class="nav-link4">
-  <a href="/">Home</a>
+<div class="nav-link5">
+  <a class="home-button"href="/">Home</a>
 </div>
+
 
 <div class="result_header">
-  <h2 style="color:white;"></br></br></br></br>Artist Results</h2>
+  <h2>Search Results</h2>
 </div>
 
+<div class="artist-result-header">
+  <h3>Artist matches:</h3>
+
+</div>
 <% if @result_artist.empty? %>
 <div class="results">
-  <h2 style="color:white; font-size: 20px;">Artist Results Empty</h2>
+  <h2>Artist Results Empty</h2>
 </div>
 <% else %>
 <div class="results">
   <% @result_artist.each do |result| %>
-  <h2 style="color:white; font-size: 20px;"><a href="/artists/<%= result.id %> "><img src= "<%=result.logo%>" class="band_logo_small" alt="" /><%= result.name %></h2>
+  <h2><a href="/artist/<%=result.id %> "><%= result.name %></a></h2>
     <% end %>
   </div>
   <% @result_artist = nil %>
   <%end%>
 
-<% if @result_album.empty? %>
-<div class="results">
-  <h2 style="color:white; font-size: 20px;">Album Results Empty</h2>
-</div>
-<% else %>
-<div class="results">
-  <% @result_album.each do |result| %>
-  <h2 style="color:white; font-size: 20px;"><a href="/artist/<%= result.id %> "><img src= "<%=result.logo%>" class="band_logo_small" alt="" /><%= result.name %></h2>
-    <% end %>
+
+<div class="artist-result-header">
+    <h3>Album matches:</h3>
+
   </div>
-  <% @result_album = nil %>
-  <%end%>
-<!--
-<% if @result_genre.empty? %>
-<div class="results">
-  <h2 style="color:white; font-size: 20px;">Genre Results Empty</h2>
-</div>
-<% else %>
-<div class="results">
-  <% @result_genre.each do |result| %>
-  <h2 style="color:white; font-size: 20px;"><a href="/artists/<%= result.id %> "><img src= "<%=result.logo%>" class="band_logo_small" alt="" /><%= result.name %></h2>
-    <% end %>
+  <% if @result_album.empty? %>
+  <div class="results">
+    <h2>Album Results Empty</h2>
   </div>
-  <% @result_genre = nil %>
-  <%end%> -->
+  <% else %>
+  <div class="results">
+    <% @result_album.each do |result| %>
+    <h2><a href="/artist/<%= result.id %> "><%= result.title %></a></h2>
+      <% end %>
+    </div>
+    <% @result_album = nil %>
+    <%end%>
+
+    <div class="artist-result-header">
+      <h3>Genre matches:</h3>
+
+    </div>
+    <% if @result_genre.empty? %>
+    <div class="results">
+      <h2>Genre Results Empty</h2>
+    </div>
+    <% else %>
+    <div class="results">
+      <% @result_genre.each do |result| %>
+      <h2><a href="/album/<%= result.id %> "><%= result.title %></a></h2>
+        <% end %>
+      </div>
+      <% @result_genre = nil %>
+      <%end%>
