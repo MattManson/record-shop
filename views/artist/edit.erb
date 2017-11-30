@@ -1,36 +1,39 @@
 <h1>Edit Existing Artist</h1>
 
-<div class="home-button">
-  <a href="/">Home></a>
+<div class="nav-link5">
+  <a class="home-button"href="/">Home</a>
 </div>
 
 
 <form action="/artist/<%=@artist.id%>" method="post">
-<input type="hidden" name="_method" value="put">
+  <input type="hidden" name="_method" value="put">
 
   <div class="field-group">
     <label for="first-name-field" class="label">Name:</label>
     <div class="field">
       <input
-        type="text"
-        name="name"
-        id="first-name-field"
-        value="<%= @artist.name %>"
+      type="text"
+      name="name"
+      id="first-name-field"
+      value="<%= @artist.name %>"
       />
-   </div>
+    </div>
   </div>
 
   <div class="field-group">
     <label for="last-name-field" class="label">Artwork:</label>
     <div class="field">
       <input
-        type="text"
-        name="logo"
-        id="last-name-field"
-        value="<%= @artist.logo %>"
+      type="text"
+      name="logo"
+      id="last-name-field"
+      value="<%= @artist.logo %>"
       />
     </div>
   </div>
+  <div class="field-group">
 
-  <button class="big-button button">Save</button>
+
+    <button class="add-link2">Save</button>
+  </div>
 </form>

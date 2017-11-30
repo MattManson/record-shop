@@ -1,11 +1,11 @@
 <h1>Edit Existing Album</h1>
 
-<div class="home-button">
-  <a href="/">Home></a>
+<div class="nav-link5">
+  <a class="home-button"href="/">Home</a>
 </div>
 
 <form action="/album/<%=@album.id%>" method="post">
-<input type="hidden" name="_method" value="put">
+  <input type="hidden" name="_method" value="put">
   <div class="field-group">
     <label for="first-name-field" class="label">Title:</label>
     <div class="field">
@@ -77,6 +77,9 @@
     </div>
   </div>
 
+  <div class="field-group">
 
-  <button class="big-button button">Save</button>
+
+    <button class="add-link2">Save</button>
+  </div>
 </form>

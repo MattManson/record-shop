@@ -23,7 +23,7 @@ h1 {
   border: 1px solid black;
 }
 a:link {
-    color: #bc2121;
+    color: white;
 }
 a:visited {
     color: #660505;
@@ -122,6 +122,8 @@ div.search
 }
 input {
   width: 50%;
+  font-size: 20px;
+  font-family: "Bangers";
   border: 2px solid #421717;
   border-radius: 4px;
   background-color: white;
@@ -137,7 +139,7 @@ div.field-group{
   width: 80%;
   display: block;
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
   margin: auto;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -147,4 +149,53 @@ div.field-group{
 }
 .artist-home{
   text-align: center;
+}
+.nav-link5{
+  float: center;
+  width: 39.5% ;
+  font-size: 30px;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  margin-left: 321px;
+  padding: 14px 25px;
+  text-align: center;
+}
+.label{
+#e00000;
+}
+.add-link{
+  margin: auto;
+  border-radius: 0px;
+  border: none;
+  font-size: 20px;
+  width: 44%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+.add-link:hover {
+  color: #d10404 !important;
+}
+a.home-button{
+  color: white !important;
+}
+a.home-button:hover {
+  color: #d10404 !important;
+}
+.add-link2{
+  float: center;
+  border-radius: 0px;
+  border: none;
+  font-size: 20px;
+  width: 55%;
+  font-family: "Bangers";
+  color: white !important;
+  background-color: #421717;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
 }
