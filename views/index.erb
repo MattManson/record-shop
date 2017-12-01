@@ -43,14 +43,13 @@
       <td><%= sprintf('%.2f', album.markup) %></td>
       <td><p><a href="/album/<%= album.id %>/edit">
         <button class="delete-link">Edit</button></a>
-
       </div>
-        <form action="/album/<%= album.id %>" method="POST">
-          <input  type="hidden" name="_method" value="delete" />
-          <button class="delete-link">Delete</button>
-        </form>
-      </p>
-    </td>
-  </tr>
-  <%end%>
+      <form action="/album/<%= album.id %>" method="POST">
+        <input  type="hidden" name="_method" value="delete" />
+        <button class="delete-link">Delete</button>
+      </form>
+    </p>
+  </td>
+</tr>
+<%end%>
 </table>

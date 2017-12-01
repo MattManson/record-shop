@@ -21,7 +21,7 @@
   <div class="field-group">
     <label for="artist-selection" class="label">Artist:</label>
     <div class="field">
-      <select name="artist" id="artist-selection">
+      <select class ="select" name="artist" id="artist-selection">
         <% @artist.each do |artist| %>
         <option value=<%=artist.id%>><%= artist.name %></option>
         <% end %>
