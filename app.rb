@@ -10,7 +10,7 @@ get '/' do
 end
 
 get '/result' do
-  @result = params['search'].capitalize
+  @result = params['search'].split(/ |\_/).map(&:capitalize).join(" ")
   @result_artist = Artist.search_artist(@result)
   @result_album = Album.search_album(@result)
   @result_genre = Album.search_genre(@result)

@@ -121,18 +121,18 @@ class Album
     albums = SqlRunner.run(sql, values)
     return albums.map{|album| Album.new(album)}
   end
-  #
-  # def genre
-  #   sql = "SELECT genres.genre FROM genres
-  #   INNER JOIN artists
-  #   ON genres.id = artists.genre
-  #   INNER JOIN albums
-  #   ON albums.artist = artists.id
-  #   WHERE albums.id = $1"
-  #   values = [@id]
-  #   genre = SqlRunner.run( sql, values )
-  #   result = Genre.new( genre.first )
-  #   return result.genre
-  # end
+
+  def genre
+    sql = "SELECT genres.genre FROM genres
+    INNER JOIN artists
+    ON genres.id = artists.genre
+    INNER JOIN albums
+    ON albums.artist = artists.id
+    WHERE albums.id = $1"
+    values = [@id]
+    genre = SqlRunner.run( sql, values )
+    result = Genre.new( genre.first )
+    return result.genre
+  end
 
 end
